@@ -76,11 +76,14 @@ class ContentTable extends React.Component {
     let fetchedData = this.state.fetchedData;
     const page = this.props.pagination;
     const elPerPage = this.props.elPerPage;
-
-    // Dont mutate
-    fetchedData = this.filterData(fetchedData);
-    // Display nested table.
     let rows = [];
+
+    // TODO: Dont mutate
+    fetchedData = this.filterData(fetchedData);
+
+    if (!fetchedData.length) {
+      return false;
+    }
 
     fetchedData = this.sortData(fetchedData);
 
@@ -89,12 +92,15 @@ class ContentTable extends React.Component {
         <ValueRow data={data} filter={this.props.filter}/>
       );
     });
+
     function between(x, min, max) {
       return x >= min && x < max;
     }
+
     rows = rows.filter((el, index) => {
       return between(index, elPerPage * page, elPerPage * page + elPerPage);
     });
+
     rows.unshift(<SortingRow keys={Object.keys(fetchedData[0])}/>);
     return rows;
   }
