@@ -77,7 +77,7 @@ class ProductTable extends React.Component {
 
     fetchedData.forEach(data => {
       rows.push(
-        <ValueRow data={data} />
+        <ValueRow data={data} filter={this.props.filter}/>
       );
     });
     function between(x, min, max) {

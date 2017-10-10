@@ -1,11 +1,21 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Highlighter from 'react-highlight-words';
 
-const ValueRow = ({ data }) => {
+const ValueRow = ({
+  data,
+  filter
+}) => {
   let content = [];
   Object.keys(data).forEach(key => {
     content.push(
-      <td>{data[key]}</td>
+      <td>
+        <Highlighter
+          highlightClassName="YourHighlightClass"
+          searchWords={[filter]}
+          textToHighlight={String(data[key])}
+        />
+      </td>
     );
   });
 
@@ -18,6 +28,7 @@ const ValueRow = ({ data }) => {
 
 ValueRow.propTypes = {
   data: PropTypes.array,
+  filter: PropTypes.string
 };
 
 export default ValueRow;
