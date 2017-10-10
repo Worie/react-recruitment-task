@@ -6,7 +6,6 @@ import {
   sortingRow as sortingRowStyling
 } from '../styles/sortingRow.scss';
 
-
 const SortingRow = ({ keys, onSort }) => {
   let content = [];
   keys.forEach(key => {

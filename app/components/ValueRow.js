@@ -6,7 +6,6 @@ import {
   valueRowHighlight
 } from '../styles/valueRow.scss';
 
-
 const ValueRow = ({
   data,
   filter

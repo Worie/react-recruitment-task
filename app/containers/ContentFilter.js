@@ -3,8 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { filterContent } from '../actions';
 
-//  import { filterableTable } from '../styles/filterableTable.scss';
-
 const ContentFilter = ({ filter, onFilter }) => {
     let input;
 

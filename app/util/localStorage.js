@@ -14,7 +14,7 @@ let result;
 if (hasStorage) {
   result = localStorage;
 } else {
-  // handle, fallback to cookies for example
+  // TODO: handle, fallback to cookies for example
   throw new Error('localStorage is unsupported');
 }
 

@@ -1,10 +1,6 @@
 import { combineReducers } from 'redux';
 import * as types from '../actions/types';
 
-//  const initialState = {
-//    visibleContent: 'opt1'
-//  };
-
 const filter = (state = '', action) => {
     switch (action.type) {
         case types.FILTER:
@@ -17,9 +13,6 @@ const filter = (state = '', action) => {
 const tabId = (state = 'posts', action) => {
   switch (action.type) {
     case types.SHOW_CONTENT:
-//      return Object.assign({}, state, {
-//        visibleContent: action.value
-//      });
       return action.value;
     default:
       return state;

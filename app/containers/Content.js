@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-//  import { content } from '../styles/c.scss';
 import ContentTable from '../components/ContentTable';
 import ContentFilter from '../containers/ContentFilter';
 import { content } from '../styles/content.scss';
@@ -49,7 +48,6 @@ const mapStateToProps = (state) => {
     sortBy: state.sortBy
   };
 };
-
 
 export default connect(
     mapStateToProps,
