@@ -2,6 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { setSort } from '../actions';
+import {
+  sortingRow as sortingRowStyling,
+} from '../styles/sortingRow.scss';
+
 
 const SortingRow = ({ keys, onSort }) => {
   let content = [];
@@ -16,7 +20,7 @@ const SortingRow = ({ keys, onSort }) => {
   });
 
   return (
-    <tr>
+    <tr className={sortingRowStyling}>
       {content}
     </tr>
   );

@@ -10,7 +10,7 @@ const ContentFilter = ({ filter, onFilter }) => {
 
     return (
         <label>
-          Filter:
+          Filter data:
             <input
                 value={filter}
                 ref={node => {input = node;}}

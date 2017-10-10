@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 //  import { content } from '../styles/c.scss';
 import ContentTable from '../components/ContentTable';
 import ContentFilter from '../containers/ContentFilter';
+import { content } from '../styles/content.scss';
 
 const Content = ({
   visibleContent,
@@ -13,7 +14,7 @@ const Content = ({
   sortBy
 }) => {
   return (
-    <section>
+    <section className={content}>
       <h2>
         Content
       </h2>

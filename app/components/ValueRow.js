@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Highlighter from 'react-highlight-words';
+import {
+  valueRow as valueRowStyling
+} from '../styles/valueRow.scss';
+
 
 const ValueRow = ({
   data,
@@ -9,7 +13,7 @@ const ValueRow = ({
   let content = [];
   Object.keys(data).forEach(key => {
     content.push(
-      <td>
+      <td className={valueRowStyling}>
         <Highlighter
           highlightClassName="YourHighlightClass"
           searchWords={[filter]}

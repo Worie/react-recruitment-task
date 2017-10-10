@@ -1,0 +1,46 @@
+.app {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #51c2af;
+  color: #000000;
+  font-family: lato;
+  min-height: 100vh;
+  border: 2px solid rgba(137, 137, 137, 0.7);
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  li {
+    white-space: nowrap;
+  }
+  
+  a {
+//    color: #f8b732;
+//    color: #ff4a1a;
+    color: #505050;
+    
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  
+  input {
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #ffffff;
+    outline-color: #fff;
+    margin: 0 10px;
+    width: 100px;
+    color: #fff;
+  }
+}

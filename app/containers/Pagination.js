@@ -6,7 +6,10 @@ import {
   setNumOfEls
 } from '../actions';
 import LocalStorage from '../util/localStorage';
-//  import { content } from '../styles/c.scss';
+import {
+  pagination as paginationStyling,
+  pageAnchors as pageAnchorsStyling
+} from '../styles/pagination.scss';
 
 const Pagination = ({
   fetchedDataLength,
@@ -24,37 +27,34 @@ const Pagination = ({
     pageAnchors.push(
       <li>
         <a href={`#page${i}`} onClick={() => onSetPage(i)}>
-          {i}
+          Page {i}
         </a>
       </li>
     );
   }
 
   return (
-    <div>
-      <div>
-        <label>
-          Go to page:
-          <input
-            type="text"
-            value={pagination}
-            ref={node => {goToPageInput = node;}}
-            onChange={() => {onSetPage(goToPageInput.value);}} />
-        </label>
-      </div>
-      <div>
-        <label>
-          Elements per page:
-          <input
-            type="text"
-            value={elPerPage}
-            ref={node => {elPerPageInput = node;}}
-            onChange={() => {onElPerPage(elPerPageInput.value); onSetPage(0);}} />
-        </label>
-      </div>
-      <h3>Pagination</h3>
-      <ul>{pageAnchors}</ul>
-    </div>
+    <nav className={paginationStyling}>
+      <label>
+        Go to page:
+        <input
+          type="text"
+          value={pagination}
+          ref={node => {goToPageInput = node;}}
+          onChange={() => {onSetPage(goToPageInput.value);}} />
+      </label>
+      <label>
+        Elements per page:
+        <input
+          type="text"
+          value={elPerPage}
+          ref={node => {elPerPageInput = node;}}
+          onChange={() => {onElPerPage(elPerPageInput.value); onSetPage(0);}} />
+      </label>
+      <ul className={pageAnchorsStyling}>
+        {pageAnchors}
+      </ul>
+    </nav>
   );
 };
 

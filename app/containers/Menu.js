@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { switchTab } from '../actions';
-//  import { content } from '../styles/c.scss';
+import { menu } from '../styles/menu.scss';
 
 const Menu = ({ onShowContent }) => {
   let li;
   return (
-    <nav>
+    <nav className={menu}>
       <h2>
         Menu
       </h2>

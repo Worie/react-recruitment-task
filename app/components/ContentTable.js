@@ -4,6 +4,9 @@ import ValueRow from './ValueRow';
 import fetchData from '../util/fetchData';
 import SortingRow from '../containers/SortingRow';
 import Pagination from '../containers/Pagination';
+import {
+  contentTable as contentTableStyling,
+} from '../styles/contentTable.scss';
 
 
 class ContentTable extends React.Component {
@@ -96,7 +99,7 @@ class ContentTable extends React.Component {
     const content = this.limitDisplayedRows();
     return (
       <div>
-        <table>
+        <table className={contentTableStyling}>
           <tbody>
             {content}
           </tbody>
