@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import ValueRow from './ValueRow';
-import SortingRow from './SortingRow';
 import fetchData from '../util/fetchData';
+import SortingRow from '../containers/SortingRow';
 import Pagination from '../containers/Pagination';
 
 
-class ProductTable extends React.Component {
+class ContentTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,17 +18,13 @@ class ProductTable extends React.Component {
   }
   componentDidUpdate(prevProps) {
     if (prevProps.visibleContent !== this.props.visibleContent ) {
-      // Dont fetch data if its already there
-//      if (!this.state.fetchedData[this.props.visibleContent]) {
-        this.fetchRenderData();
-//      }
+      // Check if data is already there, and don't fetch if it's not necessary
+      this.fetchRenderData();
     }
   }
   fetchRenderData() {
     fetchData(`http://jsonplaceholder.typicode.com/${this.props.visibleContent}`)
       .then(data => {
-//      const fetchedData = this.state.fetchedData;
-//      fetchedData[this.props.visibleContent] = data;
       this.setState({
         fetchedData: data,
         wasSuccessful: true,
@@ -111,7 +107,7 @@ class ProductTable extends React.Component {
   }
 }
 
-ProductTable.propTypes = {
+ContentTable.propTypes = {
   visibleContent: PropTypes.string,
   elPerPage: PropTypes.number,
   pagination: PropTypes.number,
@@ -119,5 +115,5 @@ ProductTable.propTypes = {
   sortBy: PropTypes.string
 };
 
-export default ProductTable;
+export default ContentTable;
 

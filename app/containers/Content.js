@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 //  import { content } from '../styles/c.scss';
-import ProductTable from '../components/ProductTable';
+import ContentTable from '../components/ContentTable';
 import ContentFilter from '../containers/ContentFilter';
 
 const Content = ({
@@ -18,7 +18,7 @@ const Content = ({
         Content
       </h2>
       <ContentFilter />
-      <ProductTable
+      <ContentTable
         visibleContent={visibleContent}
         elPerPage={elPerPage}
         pagination={pagination}
