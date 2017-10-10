@@ -20,3 +20,9 @@
     text-align: center;
   }
 }
+
+// Polyfill when possible
+.menuWrapper {
+  position: sticky;
+  top: 30px;
+}
