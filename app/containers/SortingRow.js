@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setSort } from '../actions';
 import {
-  sortingRow as sortingRowStyling,
+  sortingRow as sortingRowStyling
 } from '../styles/sortingRow.scss';
 
 
@@ -39,8 +39,22 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+    const ORDER = ['ASC', 'DESC'];
+    // This is the case where I'd like to set local state (ASC/DESC individual for each tab)
+    // This approach should be reconsidered (new component with its local state?)
+    const orderOfSort = {};
     return {
-        onSort: sortValue => dispatch(setSort(sortValue))
+        onSort: sortValue => {
+            dispatch(
+              setSort({
+                key: sortValue,
+                // This makes sure that even if the key is undefined, it'll pass 'ASC'
+                order: ORDER[Number(Boolean(orderOfSort[sortValue]))]
+              })
+            );
+            // Next time someone click it, it'll be in the negated order
+            orderOfSort[sortValue] = !orderOfSort[sortValue];
+        }
     };
 };
 

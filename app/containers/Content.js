@@ -37,7 +37,7 @@ Content.propTypes = {
   elPerPage: PropTypes.number,
   pagination: PropTypes.number,
   filter: PropTypes.string,
-  sortBy: PropTypes.string
+  sortBy: PropTypes.object
 };
 
 const mapStateToProps = (state) => {

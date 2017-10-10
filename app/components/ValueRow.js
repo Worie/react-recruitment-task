@@ -31,7 +31,7 @@ const ValueRow = ({
 };
 
 ValueRow.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.object,
   filter: PropTypes.string
 };
 

@@ -28,10 +28,11 @@ export function setNumOfEls(value) {
   };
 }
 
-export function setSort(value) {
+export function setSort({ key, order}) {
   return {
     type: types.SORT_CONTENT,
-    value
+    key,
+    order
   };
 }
 

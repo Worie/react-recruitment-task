@@ -57,6 +57,21 @@ class ContentTable extends React.Component {
       return false;
     });
   }
+  sortData(data) {
+    const sortBy = this.props.sortBy;
+
+    let sorted = data.sort((a, b) => {
+      if(a[sortBy.key] < b[sortBy.key]) return -1;
+      if(a[sortBy.key] > b[sortBy.key]) return 1;
+      return 0;
+    });
+
+    if (sortBy.order === 'DESC') {
+      sorted = sorted.reverse();
+    }
+
+    return sorted;
+  }
   limitDisplayedRows() {
     let fetchedData = this.state.fetchedData;
     const page = this.props.pagination;
@@ -67,12 +82,7 @@ class ContentTable extends React.Component {
     // Display nested table.
     let rows = [];
 
-    const sortBy = this.props.sortBy;
-    fetchedData = fetchedData.sort((a, b) => {
-      if(a[sortBy] < b[sortBy]) return -1;
-      if(a[sortBy] > b[sortBy]) return 1;
-      return 0;
-    });
+    fetchedData = this.sortData(fetchedData);
 
     fetchedData.forEach(data => {
       rows.push(
@@ -115,7 +125,7 @@ ContentTable.propTypes = {
   elPerPage: PropTypes.number,
   pagination: PropTypes.number,
   filter: PropTypes.string,
-  sortBy: PropTypes.string
+  sortBy: PropTypes.object
 };
 
 export default ContentTable;

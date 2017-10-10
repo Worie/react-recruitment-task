@@ -60,7 +60,7 @@ const Pagination = ({
 
 Pagination.propTypes = {
   onSetPage: PropTypes.func,
-  pagination: PropTypes.string,
+  pagination: PropTypes.number,
   elPerPage: PropTypes.number,
   onElPerPage: PropTypes.func,
   fetchedDataLength: PropTypes.number

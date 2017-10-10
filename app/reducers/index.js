@@ -45,10 +45,13 @@ const elPerPage = (state = 5, action) => {
 };
 
 
-const sortBy = (state = 'id', action) => {
+const sortBy = (state = {key: 'id', order: 0}, action) => {
   switch (action.type) {
     case types.SORT_CONTENT:
-      return action.value;
+      return {
+        key: action.key,
+        order: action.order
+      };
     default:
       return state;
   }
