@@ -1,4 +1,6 @@
-# React recruitment task
+![Preview of the app](https://github.com/Worie/react-recruitment-task/blob/master/tech.gif?raw=true)
+
+# React recruitment task based on React and Redux
 
 React app that was created during my recruitment to xSolve. Made with React and Redux.
 
@@ -34,7 +36,3 @@ http://jsonplaceholder.typicode.com/) i  przynajmniej jedna zaprezentowana  w  p
 ## Live
 
 View working app in your browser by clicking [here](https://worie.github.io/xsolve-react/).
-
-## Notes
-
-Enviroment based on [this boilerplate](https://github.com/jpsierens/webpack-react-redux).
