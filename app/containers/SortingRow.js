@@ -38,11 +38,12 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
+const ORDER = ['ASC', 'DESC'];
+// This is the case where I'd like to set local state (ASC/DESC individual for each tab)
+// This approach should be reconsidered (new component with its local state?)
+const orderOfSort = {};
+
 const mapDispatchToProps = (dispatch) => {
-    const ORDER = ['ASC', 'DESC'];
-    // This is the case where I'd like to set local state (ASC/DESC individual for each tab)
-    // This approach should be reconsidered (new component with its local state?)
-    const orderOfSort = {};
     return {
         onSort: sortValue => {
             dispatch(
