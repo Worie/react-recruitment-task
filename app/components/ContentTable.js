@@ -21,12 +21,12 @@ class ContentTable extends React.Component {
   }
   componentDidUpdate(prevProps) {
     if (prevProps.visibleContent !== this.props.visibleContent ) {
-      // Check if data is already there, and don't fetch if it's not necessary
+      // TODO: Check if data is already there, and don't fetch if it's not necessary
       this.fetchRenderData();
     }
   }
   fetchRenderData() {
-    fetchData(`http://jsonplaceholder.typicode.com/${this.props.visibleContent}`)
+    fetchData(`https://jsonplaceholder.typicode.com/${this.props.visibleContent}`)
       .then(data => {
       this.setState({
         fetchedData: data,
