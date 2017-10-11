@@ -5,9 +5,9 @@ import fetchData from '../util/fetchData';
 import SortingRow from '../containers/SortingRow';
 import Pagination from '../containers/Pagination';
 import {
-  contentTable as contentTableStyling,
+  contentTable as contentTableStyling
 } from '../styles/contentTable.scss';
-
+import shortId from 'shortid';
 
 class ContentTable extends React.Component {
   constructor(props) {
@@ -89,7 +89,7 @@ class ContentTable extends React.Component {
 
     fetchedData.forEach(data => {
       rows.push(
-        <ValueRow data={data} filter={this.props.filter}/>
+        <ValueRow data={data} filter={this.props.filter} key={shortId.generate()}/>
       );
     });
 
@@ -101,7 +101,7 @@ class ContentTable extends React.Component {
       return between(index, elPerPage * page, elPerPage * page + elPerPage);
     });
 
-    rows.unshift(<SortingRow keys={Object.keys(fetchedData[0])}/>);
+    rows.unshift(<SortingRow key={shortId.generate()} keys={Object.keys(fetchedData[0])}/>);
     return rows;
   }
   render() {

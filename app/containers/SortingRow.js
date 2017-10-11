@@ -5,12 +5,13 @@ import { setSort } from '../actions';
 import {
   sortingRow as sortingRowStyling
 } from '../styles/sortingRow.scss';
+import shortId from 'shortid';
 
 const SortingRow = ({ keys, onSort }) => {
   let content = [];
   keys.forEach(key => {
     content.push(
-      <td>
+      <td key={shortId.generate()}>
         <a href={'#sortBy' + key} onClick={() => onSort(key)}>
           {key}
         </a>

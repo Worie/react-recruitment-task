@@ -10,6 +10,7 @@ import {
   pagination as paginationStyling,
   pageAnchors as pageAnchorsStyling
 } from '../styles/pagination.scss';
+import shortId from 'shortid';
 
 const Pagination = ({
   fetchedDataLength,
@@ -25,7 +26,7 @@ const Pagination = ({
 
   for (let i = 0; i < fetchedDataLength / elPerPage; i++) {
     pageAnchors.push(
-      <li>
+      <li key={shortId.generate()}>
         <a href={`#page${i}`} onClick={() => onSetPage(i)}>
           Page {i}
         </a>

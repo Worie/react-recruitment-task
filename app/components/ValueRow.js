@@ -5,6 +5,7 @@ import {
   valueRow as valueRowStyling,
   valueRowHighlight
 } from '../styles/valueRow.scss';
+import shortId from 'shortid';
 
 const ValueRow = ({
   data,
@@ -13,7 +14,7 @@ const ValueRow = ({
   let content = [];
   Object.keys(data).forEach(key => {
     content.push(
-      <td className={valueRowStyling}>
+      <td className={valueRowStyling} key={shortId.generate()}>
         <Highlighter
           highlightClassName={valueRowHighlight}
           searchWords={[filter]}
